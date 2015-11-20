@@ -4,7 +4,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using PortableSample.DataAccess;
 using PortableSample.Entities;
 
@@ -22,7 +24,18 @@ namespace PortableSample.ViewModels
 
         public string DummyMessage => "Hola gayers!";
 
+        public string Name { get; set; }
+
         public ObservableCollection<Dummy> Dummies { get; set; }
+
+
+        public ICommand CreateItemCommand => new RelayCommand(CreateItemCommandDelegate);
+
+        private async void CreateItemCommandDelegate()
+        {
+            var item = new Dummy() { Name = this.Name };
+            await factory.Dummy.SaveAsync(item);
+        }
 
         private async void PopulateDummies()
         {

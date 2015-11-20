@@ -8,7 +8,10 @@
         DataContext="{Binding Main, Source={StaticResource Locator}}"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                   Text="{Binding DummyMessage}" />
+        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center"
+                 Text="{Binding Name, Mode=TwoWay}" Width="120" />
+        <Button Content="Crear item" Command="{Binding CreateItemCommand}"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Margin="12" />
     </Grid>
 </Window>
