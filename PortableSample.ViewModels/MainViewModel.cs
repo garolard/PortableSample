@@ -4,12 +4,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight;
 using PortableSample.DataAccess;
 using PortableSample.Entities;
 
 namespace PortableSample.ViewModels
 {
-    public class MainViewModel
+    public class MainViewModel : ViewModelBase
     {
         private readonly RepositoryFactory factory;
 
@@ -18,6 +19,8 @@ namespace PortableSample.ViewModels
             factory = new RepositoryFactory(dataContext);
             Dummies = new ObservableCollection<Dummy>();
         }
+
+        public string DummyMessage => "Hola gayers!";
 
         public ObservableCollection<Dummy> Dummies { get; set; }
 

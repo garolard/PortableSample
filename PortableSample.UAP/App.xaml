@@ -5,4 +5,8 @@
     xmlns:local="using:PortableSample.UAP"
     RequestedTheme="Light">
 
+    <Application.Resources>
+        <local:ViewModelLocator x:Key="Locator"/>
+    </Application.Resources>
+    
 </Application>
