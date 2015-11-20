@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableSample.DataAccess",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableSample.ViewModels", "PortableSample.ViewModels\PortableSample.ViewModels.csproj", "{0E76D63C-271E-4080-9D48-3CEE32714A35}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLogic", "DataLogic", "{24EDD17B-345B-45DD-A92D-C7B1021FF3AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Middleware", "Middleware", "{BECEDC4C-871E-4B55-BA6D-B6F4BC0003FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B058E8A1-5DD2-42AF-8E64-E27D569046F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -112,5 +118,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5582A6FE-62B1-411C-930D-08CFC1F432EC} = {B058E8A1-5DD2-42AF-8E64-E27D569046F2}
+		{66A0A8CE-C1F6-463F-B70F-132FE7D9930E} = {B058E8A1-5DD2-42AF-8E64-E27D569046F2}
+		{A2DE7C8C-EDC2-4A7F-9911-090C25D2AEEE} = {24EDD17B-345B-45DD-A92D-C7B1021FF3AC}
+		{DE6BFCCF-A603-45CD-A293-CF44D0672956} = {24EDD17B-345B-45DD-A92D-C7B1021FF3AC}
+		{0E76D63C-271E-4080-9D48-3CEE32714A35} = {BECEDC4C-871E-4B55-BA6D-B6F4BC0003FD}
 	EndGlobalSection
 EndGlobal
