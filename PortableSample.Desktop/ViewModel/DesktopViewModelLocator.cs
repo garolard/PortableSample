@@ -12,9 +12,12 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using System;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using PortableSample.DataAccess;
+using PortableSample.Desktop;
 using PortableSample.ViewModels;
 
 namespace PortableSample.Desktop.ViewModel
@@ -23,29 +26,14 @@ namespace PortableSample.Desktop.ViewModel
     /// This class contains static references to all the view models in the
     /// application and provides an entry point for the bindings.
     /// </summary>
-    public class ViewModelLocator
+    public class DesktopViewModelLocator : BaseViewModelLocator
     {
-        /// <summary>
-        /// Initializes a new instance of the ViewModelLocator class.
-        /// </summary>
-        public ViewModelLocator()
-        {
-        }
-
-        private MainViewModel _main;
-        public MainViewModel Main
+        public override ISqLiteDataContext DataContext
         {
             get
             {
-                if (_main == null)
-                    _main = new MainViewModel(new SQLiteDataContextNet());
-                return _main;
+                return new SQLiteDataContextNet();
             }
-        }
-        
-        public static void Cleanup()
-        {
-            // TODO Clear the ViewModels
         }
     }
 }

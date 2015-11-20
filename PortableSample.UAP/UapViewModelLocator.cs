@@ -5,26 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using PortableSample.DataAccess;
+using PortableSample.UAP;
 using PortableSample.ViewModels;
 
 namespace PortableSample.UAP
 {
-    public class ViewModelLocator
+    public class UapViewModelLocator : BaseViewModelLocator
     {
-        public ViewModelLocator()
-        {
-        }
-
-        private MainViewModel _main;
-        public MainViewModel Main
+        public override ISqLiteDataContext DataContext
         {
             get
             {
-                if (_main == null)
-                    _main = new MainViewModel(new SQLiteDataContextUAP());
-                return _main;
+                return new SQLiteDataContextUAP();
             }
         }
-
     }
 }
