@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -119,7 +121,7 @@
       <Name>PortableSample.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\PortableSample.Desktop.Controls\PortableSample.Desktop.Controls.csproj">
-      <Project>{169c8978-22ba-4053-a242-d93f114cc6d4}</Project>
+      <Project>{6a9abb1c-7efa-4b08-a5de-b3edd89c7e93}</Project>
       <Name>PortableSample.Desktop.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\PortableSample.ViewModels\PortableSample.ViewModels.csproj">
@@ -131,6 +133,9 @@
     <Content Include="sqlite3.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

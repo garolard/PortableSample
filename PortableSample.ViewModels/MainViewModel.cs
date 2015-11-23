@@ -23,6 +23,7 @@ namespace PortableSample.ViewModels
             PopulateDummies();
         }
 
+
         public string Name { get; set; }
 
         public ObservableCollection<Dummy> Dummies { get; set; }

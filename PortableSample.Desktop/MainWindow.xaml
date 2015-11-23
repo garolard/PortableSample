@@ -4,41 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PortableSample.Desktop"
+        xmlns:sharedControls="clr-namespace:PortableSample.Shared.Controls;assembly=PortableSample.Desktop.Controls"
         mc:Ignorable="d"
         DataContext="{Binding Main, Source={StaticResource Locator}}"
         Title="MainWindow" Height="350" Width="525">
-    <Grid x:Name="ContentRoot">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <TextBox Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"
-                 Text="{Binding Name, Mode=TwoWay}" Width="120" />
-
-        <ListView Grid.Row="1" ItemsSource="{Binding Dummies}"
-                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                  SelectedItem="{Binding Selected, Mode=TwoWay}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="{Binding Name}" HorizontalAlignment="Left" />
-                        <Button Grid.Column="1" HorizontalAlignment="Right"
-                                Command="{Binding ElementName=ContentRoot, Path=DataContext.DeleteItemCommand}" CommandParameter="{Binding}">
-                            <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" />
-                        </Button>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <Button Grid.Row="2" Content="Crear item" Command="{Binding CreateItemCommand}"
-                HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                Margin="12" />
-
+    <Grid>
+        <sharedControls:MainUserControl />
     </Grid>
 </Window>
