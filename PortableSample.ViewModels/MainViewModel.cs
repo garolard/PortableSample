@@ -26,19 +26,9 @@ namespace PortableSample.ViewModels
         public string Name { get; set; }
 
         public ObservableCollection<Dummy> Dummies { get; set; }
-
-        private Dummy _selected;
-        public Dummy Selected
-        {
-            get { return _selected; }
-            set { _selected = value; RaisePropertyChanged(); CreateItemCommand.RaiseCanExecuteChanged(); }
-        }
         
 
-        public RelayCommand CreateItemCommand => new RelayCommand(CreateItemCommandDelegate, new Func<bool>(() =>
-        {
-            return Selected == null;
-        }));
+        public RelayCommand CreateItemCommand => new RelayCommand(CreateItemCommandDelegate);
 
         public ICommand DeleteItemCommand => new RelayCommand<Dummy>(DeleteItemCommandDelegate);
         
