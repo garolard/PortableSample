@@ -33,5 +33,10 @@ namespace PortableSample.DataAccess
         {
             return Conn.Table<T>().Where(predicate).ToListAsync();
         }
+
+        public Task<int> DeleteAsync(T value)
+        {
+            return Conn.DeleteAsync(value);
+        }
     }
 }

@@ -13,9 +13,6 @@
 */
 
 using System;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
 using PortableSample.DataAccess;
 using PortableSample.Desktop;
 using PortableSample.ViewModels;

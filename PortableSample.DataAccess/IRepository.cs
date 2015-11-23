@@ -11,5 +11,6 @@ namespace PortableSample.DataAccess
     {
         Task<T> SaveAsync(T value);
         Task<List<T>> FindAsync(Expression<Func<T, bool>> predicate);
+        Task<int> DeleteAsync(T value);
     }
 }
